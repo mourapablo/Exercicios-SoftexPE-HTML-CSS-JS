@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Resultado escolar</h1>
+</body>
+<script>
+    /*Quando usar cx de perguntas pedindo um numero, temos que usar o parseFloat() para declarar que estamos 
+    recebendo 1 numero real */
+    var nota1 = parseFloat(prompt('Digite sua primeira nota:'));
+    var nota2 = parseFloat(prompt('Digite sua segunda nota:'));
+    var nota3 = parseFloat(prompt('Digite sua terceira nota:'));
+    var nota4 = parseFloat(prompt('Digite sua quarta nota:'));
+    var media = (nota1 + nota2 + nota3 + nota4)/4;
+
+    /* Para calcular a média, declaramos as variaveis de notas e da media
+    (soma das notas dividindo pela quantidade de notas) depois pedindo pra exibir a variavel media.*/
+
+    if(media<=4){
+        document.write(`<p>O aluno obteve a média: ${media}  <strong>"Aluno reprovado."</strong></p>`);
+        document.body.style.backgroundColor='grey';
+        document.body.style.color='white';
+        document.body.style.fontSize='20pt';
+        document.body.style.textAlign='center';
+    }else if(media>4 && media<7){
+        document.write(`<p>O aluno obteve a média: ${media}  <strong>"Aluno em recuperação."</strong></p>`);
+        document.body.style.backgroundColor='green';
+        document.body.style.color='white';
+        document.body.style.fontSize='20pt';
+        document.body.style.textAlign='center';
+    }else if(media>=7 && media <= 10){
+        document.write(`<p>O aluno obteve a média: ${media}  <strong>"Parabéns o aluno foi aprovado."</strong></p>`);
+        document.body.style.backgroundColor='yellow';
+        document.body.style.color='black';
+        document.body.style.fontSize='20pt';
+        document.body.style.textAlign='center';
+    }else{
+        document.write('Digite notas válidas.')
+        document.body.style.backgroundColor='black';
+        document.body.style.color='white';
+        document.body.style.fontSize='20pt';
+        document.body.style.textAlign='center';
+    }
+/*Foram usadas as relações condicionais para analisar a aprovação do aluno, também foi definido o tamanho da fonte,
+ cor de fundo dependendo do resultado*/
+    
+
+</script>
+</html>

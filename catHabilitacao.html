@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoria Habilitação</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+var qtrod = parseInt(prompt('Digite quantas rodas tem seu veiculo:'));
+var pesocx = parseFloat(prompt('Digite seu peso em Kg:'))
+var qtpess = parseInt(prompt('Digite a quantidade de pessoas que cabem no veiculo:'));
+var peso = pesocx*qtpess
+
+if(qtrod==2 || qtrod==3){
+    document.write('categoria A')
+}else if(qtrod==4 && qtrod<=8 && peso<=3500){
+    document.write('Categoria B')
+}else if(qtrod>=4 && peso>3500 && peso<6000){
+    document.write('Categoria C')
+}else if(qtrod>=4 && qtpess>8){
+    document.write('Categoria D')
+}else{
+    document.write('Categoria E')
+}
+
+/*Desenvolva um código, utilizando o Google Blockly, que utilize as seguintes características de um veículo:
+- Quantidade de rodas;
+- Peso bruto em quilogramas;
+- Quantidade de pessoas no veículo.
+
+Com essas informações, o programa mostrará qual é a melhor 
+categoria de habilitação para o veículo informado a partir das condições:
+A: Veículos com duas ou três rodas;
+B: Veículos com quatro rodas, que acomodam até oito pessoas e seu peso é de até 3500 kg;
+C: Veículos com quatro rodas ou mais e com peso entre 3500 e 6000 kg;
+D: Veículos com quatro rodas ou mais e que acomodam mais de oito pessoas;
+E: Veículos com quatro rodas ou mais e com mais de 6000 kg.*/
+</script>
+
+</html>
+

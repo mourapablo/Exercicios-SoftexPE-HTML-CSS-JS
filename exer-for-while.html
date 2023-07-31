@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: darkgrey;
+            text-align: center;
+            width: 100%;
+        }
+
+        h1{
+            background-color: rgb(136, 136, 194);
+            width:50% ;
+            margin-left: 25%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #res{
+            margin-left: -40%;
+            color: aliceblue;
+            font-size: 20pt;
+        }
+        #botao{
+            border-bottom: black;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            
+            
+            width: 20%;
+            background-color: rgb(162, 162, 162);
+            box-shadow: 0 0 20px rgb(34, 0, 255);
+           
+            text-shadow: 0 0 10px rgb(38, 0, 255);
+            transition: background-color 0.3s ease;
+            animation: neon 1.5s ease-in-out infinite alternate;
+
+
+        }
+
+        #botao:hover{
+            background-color: rgb(97, 136, 221);
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador Regressivo</h1>
+    
+    <button id="botao" onclick="clicar()">Clique aqui</button>
+
+    <div id="res">
+
+    </div>
+</body>
+<script>
+
+    let botao = document.getElementById('botao');
+    let res = document.getElementById('res');
+    let i = 10;
+
+
+    function clicar(){
+       let conf = confirm('Voce acionou uma bomba, começando contagem regressiva....');
+        
+        if(conf){
+            for(let i = 10 ; i>=0 ; i--){
+        res.innerHTML += ("<br>" + i )
+        document.body.style.backgroundImage = "url('bomba.webp')";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundSize = "cover";
+        
+    }
+    
+    res.innerHTML += ("<br>Buuummmmmmmmmmmmmm")
+    }else{
+       alert('Sem saída, esta bomba não pode ser destivada.')
+       for(let i = 10 ; i>=0 ; i--){
+        res.innerHTML += ("<br>" + i )
+        document.body.style.backgroundImage = "url('bomba.webp')";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundSize = "cover";
+    }
+
+    res.innerHTML += ("<br>Buuummmmmmmmmmmmmm")
+        
+    }
+}
+   
+
+</script>
+</html>

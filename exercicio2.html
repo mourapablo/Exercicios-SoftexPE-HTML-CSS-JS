@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio2</title>
+    <style>
+
+     body{
+            margin-top: 20px;
+            background-color: skyblue;
+            color: rgb(253, 253, 253);
+            text-align: center;
+            font-size: 18pt;
+            font-family:fantasy;
+            box-shadow: 2px 2px 5px black;
+            height: 40px;
+            padding: 50px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="selecao">
+    <label for="clima">Selecione o tipo de clima hoje:</label>
+    <select name="clima" id="clima">
+        <option value="">---Faça uma escolha---</option>
+        <option value="ensolarado">Ensolarado</option>
+        <option value="nublado">Nublado</option>
+        <option value="chuvoso">Chuvoso</option>
+    </select>
+    <!--O elemento select permite fazer escolhas diferentes e o paragrafo é onde aparecerá a mensagem. --> 
+
+    <p id="para"></p>
+</div>
+    
+</body>
+<script>
+
+    /* armazenamos uma referencia p/ambos elementos (<select> e <p> e add uma lista de escolhas ao <select> p/ quando o valor for alterado a função mudarClima seja executada.
+        Quando a função é executada 1° definimos uma "var escolha" para o valor do elemento <select>) depois testamos as condições nos blocos */
+    let select = document.querySelector('select');
+    let para = document.querySelector('p');
+    
+    
+    
+
+    select.addEventListener('change', mudarClima);
+
+    function mudarClima(){
+        let escolha = select.value;
+
+        if(escolha === 'ensolarado'){
+            para.textContent = 'Está agradável e ensolarado lá fora hoje. Use shorts! Vá para a praia ou o parque e pegue um sorvete.';
+            document.body.style.backgroundImage = 'url(sol.jpg)' 
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.color = 'red'
+            /* Mudando o fundo do corpo do site a partir da escolha do usuario e os "cover e o no-repeat" é pra preencher a tela inteira com a imagem */
+
+        } else if (escolha === 'nublado'){
+            para.textContent = 'Não está chovendo, mas o céu está cinza e sombrio; poderia mudar a qualquer momento, então leve um casaco de chuva só por precaução.';
+            document.body.style.backgroundImage = 'url(nublado.jpg)' 
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.color = 'white'
+            
+
+        }else if(escolha === 'chuvoso') {
+            para.textContent = 'A chuva está caindo! Melhor ficar em casa com uma xícara de chocolate quente ou ir assistir um filme.';
+            document.body.style.backgroundImage = 'url(chuvoso.jpg)' 
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.color = 'black';
+        }else {
+            para.textContent ='';
+        }
+    }
+</script>
+</html>
