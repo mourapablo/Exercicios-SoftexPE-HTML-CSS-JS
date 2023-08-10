@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <style>
+      body{
+        background-color: orangered;
+      }
+      h1{
+        text-align: center;
+      }
+      h2{
+        text-align: center;
+      }
+      #cabecalho{
+        background-color: orange;
+        text-align: justify;
+        display: inline-block;
+        width: 40%;
+        text-align: right;
+        margin-left: 300px;
+        box-shadow: 2px 2px 10px black;
+      }
+
+      ul{
+        list-style: none;
+        text-align: justify;
+        text-align: left;
+        margin-left: 80px;
+        
+      }
+
+      .same-size{
+        width: 500px;
+      }
+      #botaocalcular{
+        border-bottom: black;
+        width: 20%;
+        background-color: rgb(255, 167, 59);
+        box-shadow: 0 0 20px black;
+        text-shadow: 0 0 2px black;
+        transition: background-color 0.3s ease;
+        animation:neon 1.5s ease-in-out infinite alternate;
+      }
+
+      #botaocalcular:hover{
+        background-color: orangered;
+      }
+
+      #resultado{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <header id="cabecalho">
+      <div class="same-size">
+    <h1>Calculadora</h1>
+    <h2>Escolha uma operação</h2>
+    <ul>
+      <li>1: Soma</li>
+      <li>2: Subtração</li>
+      <li>3: Multiplicação</li>
+      <li>4: Divisão</li>
+      <li>0: Sair</li>
+    </ul>
+    <label for="operacao">Escolha a Operação:</label>
+    <input type="number" id="operacao">
+    <br><br>
+    <label for="num1">Digite o primeiro valor:</label>
+    <input type="number" id="num1">
+    <br><br>
+    <label for="num2">Digite o segundo valor:</label>
+    <input type="number" id="num2">
+    <br><br>
+    <button id="botaocalcular" onclick="calcular()">Calcular</button>
+    <br><br>
+    <div id="resultado"></div>
+  </div>
+  </header>
+    <script>
+      function calcular() {
+        let operacao = parseInt(document.getElementById("operacao").value);
+        if (operacao >= 1 && operacao <= 4) {
+          let num1 = parseFloat(document.getElementById("num1").value);
+          let num2 = parseFloat(document.getElementById("num2").value);
+          let resultado = document.getElementById('resultado');
+          let resultadocalculado;
+          switch (operacao) {
+            case 1:
+              resultadocalculado = num1 + num2;
+              break;
+            case 2:
+              resultadocalculado = num1 - num2;
+              break;
+            case 3:
+              resultadocalculado = num1 * num2;
+              break;
+            case 4:
+              resultadocalculado = num1 / num2;
+              break;
+           
+          }
+          resultado.innerHTML = "O resultado da operação é: " + resultadocalculado;
+        } else if(operacao <0){
+          alert("Essa opção não existe");
+         } else {
+          alert('Você saiu , Atualize a página para utilizar novamente.');
+          document.getElementById('botaocalcular').disabled = true;
+        }
+      }
+    </script>
+  </body>
+</html>
