@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleição</title>
+    <style>
+      body{
+        background-color: rgb(52, 159, 253);
+        font-size: 20pt;
+        text-align: center;
+        
+      
+      }
+      ul{
+        list-style: none;
+      }
+     
+    </style>
+</head>
+<body>
+<h1>Votação</h1>
+<ul>
+<h2>Candidatos</h2>
+<li>candidato_x : 889</li><br>
+<li>candidato_y : 847</li><br>
+<li>candidato_z : 515</li><br>
+<li>Nulo : 0</li>
+</ul>
+<label for="cand">Escolha seu candidato</label>
+<select name="cand" id="cand">
+<option value="1">889</option>
+<option value="2">847</option>
+<option value="3">515</option>
+<option value="4">0</option>
+</select><br>
+<button id="botao" onclick="botao()">Vote</button>
+<div id="res"></div>
+</body>
+<script>
+    /*Desenvolva um código que simule uma eleição com três candidatos.
+- candidato_X => 889
+- candidato_Y => 847
+- candidato_Z => 515
+- branco => 0
+
+O código deve perguntar se deseja finalizar a votação depois do voto. Caso o número do voto não corresponda a nenhum candidato ou seja branco, ele deve ser tratado como nulo. Se for inserido um texto ao invés de número, o código deve retornar uma mensagem para votar novamente.
+
+Quando a votação for finalizada, o código deverá mostrar o vencedor, aquele com o maior número de votos e, também, a quantidade de votos de cada candidato, os brancos e nulos. 
+
+Realize essa atividade, suba esse arquivo em um drive com link público e compartilhe o link no campo ao lado para que outros desenvolvedores possam analisá-lo.
+Recursos*/
+
+let candidato_X = 0
+let candidato_Y = 0
+let candidato_Z = 0
+let branco = 0
+
+
+function botao(){
+    
+        let voto = document.getElementById('cand').value;
+
+        if(voto === '1'){
+            candidato_X++
+        }else if(voto === '2'){
+            candidato_Y++
+        }else if(voto === '3'){
+            candidato_Z++
+        }else if(voto === '4'){
+            branco++
+        } else {
+            alert('Voto nulo , tente novamente.')
+            return 
+        }
+        
+  let finalizar = confirm("Deseja finalizar a votação?");
+
+if (finalizar) {
+  let total_votos = candidato_X + candidato_Y + candidato_Z + branco;
+
+  let resultado = "Resultado da eleição:<br>" +
+                   "Candidato X: " + candidato_X + " votos (" + (candidato_X/total_votos*100).toFixed(2) + "%)<br>" +
+                   "Candidato Y: " + candidato_Y + " votos (" + (candidato_Y/total_votos*100).toFixed(2) + "%)<br>" +
+                   "Candidato Z: " + candidato_Z + " votos (" + (candidato_Z/total_votos*100).toFixed(2) + "%)<br>" +
+                   "Votos em branco: " + branco + " votos (" + (branco/total_votos*100).toFixed(2) + "%)<br>";
+
+  let vencedor = "";
+
+  if (candidato_X > candidato_Y && candidato_X > candidato_Z) {
+    vencedor = "O candidato X foi o vencedor!";
+  } else if (candidato_Y > candidato_X && candidato_Y > candidato_Z) {
+    vencedor = "O candidato Y foi o vencedor!";
+  } else if (candidato_Z > candidato_X && candidato_Z > candidato_Y) {
+    vencedor = "O candidato Z foi o vencedor!";
+  } else {
+    vencedor = "A eleição terminou empatada!";
+  }
+
+  document.getElementById("res").innerHTML = resultado + vencedor;
+}
+}
+
+    
+
+ 
+
+
+
+
+
+
+</script>
+</html>

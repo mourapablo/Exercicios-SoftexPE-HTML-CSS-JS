@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+      body{
+        background-color: darkgray;
+        text-align: center;
+      }
+
+      h1{
+        text-align: center;
+      }
+
+      #cabecalho{
+        background-color: rgb(231, 149, 42);
+        width: 35%;
+        box-shadow: 2px 2px 5px black;
+        display: inline-block;
+        text-align: right;
+        margin-left: justify;
+      }
+
+      .same-size{
+        width: 450px;
+      }
+
+      #calculator{
+        border-bottom: black;
+        box-shadow: 0 0 10px blue;
+        background-color: aquamarine;
+        text-shadow: 0 0 20px black;
+        transition: background-color 0.3s ease;
+        animation: neon 1.5s ease-in-out infinite alternate;
+        
+      }
+
+      #calculator:hover{
+        background-color: cadetblue;
+      }
+
+    </style>
+</head>
+<body>
+    
+  <header id="cabecalho">
+    <div class="same-size">
+    <h1>Calculadora</h1>
+    <label for="num1">Digite um numero:</label>
+    <input type="number" name="number" id="num1"><br><br>
+    <label for="num2">Digite outro numero:</label>
+    <input type="number" name="number" id="num2"><br><br>
+    <label for="operation">Escolha uma operação:</label>
+    <select name="operation" id="operation">
+        <option value="1">Adição</option>
+        <option value="2">Subtração</option>
+        <option value="3">Mutiplicação</option>
+        <option value="4">Divisão</option>
+    </select><br><br>
+    <button id="calculator" onclick="calculator()">Calculadora</button><br><br>
+
+    <div id="result">
+
+    </div>
+  </div>
+  </header>
+</body>
+<script>
+
+function calculator() {
+ 
+  let num1 = parseFloat(document.getElementById('num1').value);
+  let num2 = parseFloat(document.getElementById('num2').value);
+  let operation = parseInt(document.getElementById('operation').value);
+  let result;
+  switch (operation) {
+    case 1:
+      result = num1 + num2;
+      break;
+    case 2:
+      result = num1 - num2;
+      break;
+    case 3:
+      result = num1 * num2;
+      break;
+    case 4:
+      if(num2!==0){
+        result = num1/num2
+      }else{
+        result=0;
+      }
+      break;
+    default:
+      result = 0;
+      break;
+  }
+
+  document.getElementById('result').innerHTML = `Resultado: ${result}`;
+}
+
+</script>
+</html>

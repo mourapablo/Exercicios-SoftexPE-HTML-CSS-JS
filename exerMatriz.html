@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: azure;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: justify;
+            text-align: center;
+        }
+        #cabecalho{
+            background-color: rgb(181, 198, 253);
+            box-shadow: 2px 2px 10px black;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="cabecalho">
+        <h1>Matriz Bidimensional</h1>
+        <script>
+            /* INSTRUÇÕES DO PROJETO
+     Nesta atividade, você deve criar um código em JavaScript com uma matriz bidimensional para armazenar informações sobre animais e as suas características.
+     
+     Cada linha deve representar um animal e cada coluna terá as diferentes informações sobre ele, como nome, espécie e idade.*/
+     
+             let animais = [
+                 ['xola', 'cachorro' , '5 anos'],
+                 ['miau', 'gato' , '2 anos'],
+                 ['cantor' , 'passaro' , '1 ano']
+             ] 
+     
+             function exibirAnimais(){
+                 for(let i = 0; i < animais.length ; i++){
+                    document.write(`O nome do animal  ${i+1} é  ${animais[i][0]}, sua espécie é ${animais[i][1]}, sua idade é ${animais[i][2]}<br>`)
+                         
+                     }
+                 }
+             exibirAnimais()
+         </script>
+    </header>
+   
+</body>
+</html>
