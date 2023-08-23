@@ -1,0 +1,93 @@
+body{
+    background-color: rgb(183, 254, 254);
+}
+
+
+.menu-principal{
+    background-color: rgb(0, 0, 29);
+    height: 98px;
+    width: 100%;
+  
+
+}
+main{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo{
+    padding: 0 px;
+    width: 40%;
+    float: left;
+
+}
+
+.titulo{
+    color: white;
+    width: 20%;
+    float: left;
+    font-size: 35pt;
+}
+.planetas ul li {
+    display: inline-block;
+    float: none;
+    margin-left: 20px;
+    margin-top: 60px;
+
+}
+.planetas ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18pt;
+}
+
+
+.videos{
+    padding: 0px;
+    width: 35%;
+    float: left;
+    margin-top: -70px;
+   
+}
+
+#ref{
+    padding: 0px;
+    width: 30%;
+    float: left;
+    margin-top: -120px;
+    text-align: center;
+}
+
+.cabecalho2 ol li {
+    width: 35%;
+    padding: 0px;
+    float: left;
+    margin-top: 10px;
+
+}
+
+.cabecalho2 ol li a {
+  text-decoration: none;
+  font-size: 18pt;
+  color: rgb(5, 5, 5);
+}
+#rodape{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 100%;
+
+}
+blockquote{
+    font-size: 18pt;
+    background-color: rgb(19, 19, 18);
+    color: white;
+    text-align: center;
+}
+
+form{
+    text-align: center;
+}
