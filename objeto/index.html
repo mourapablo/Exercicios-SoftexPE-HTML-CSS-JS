@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Objetos</h1>
+
+    <script>
+        function banco(conta, saldo, tipoDeConta, agencia) {
+            this.conta = conta;
+            this.saldo = saldo;
+            this.tipoDeConta = tipoDeConta;
+            this.agencia = agencia;
+        }
+        banco.prototype.buscarSaldo = function () {
+            return alert(`Seu saldo é:R$${this.saldo}`) 
+        }
+
+        banco.prototype.deposito = function (valor) {
+            return alert(`Seu saldo é:R$${this.saldo += valor}`)
+        }
+        banco.prototype.saque = function (valor) {
+            return alert(`Seu saldo é:R$${this.saldo -= valor}`)
+        }
+        banco.prototype.numconta = function () {
+            return alert(`O número da sua conta é:${this.conta}`)
+        }
+
+
+        var minhaConta = new banco(2992, 1000, 'corrente', 1);
+        minhaConta.buscarSaldo()
+        minhaConta.deposito(500)
+        minhaConta.saque(200)
+        minhaConta.numconta()
+
+    </script>
+</body>
+
+</html>
